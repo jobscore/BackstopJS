@@ -9,6 +9,8 @@ const ensureDirectoryPath = require('./ensureDirectoryPath');
 const injectBackstopTools = require('../../capture/backstopTools.js');
 const engineTools = require('./engineTools');
 
+const chromium = require('chrome-aws-lambda');
+
 const MIN_CHROME_VERSION = 62;
 const TEST_TIMEOUT = 60000;
 const DEFAULT_FILENAME_TEMPLATE = '{configId}_{scenarioLabel}_{selectorIndex}_{selectorLabel}_{viewportIndex}_{viewportLabel}';
