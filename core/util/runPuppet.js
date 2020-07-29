@@ -62,7 +62,12 @@ async function processScenarioView (scenario, variantOrScenarioLabelSafe, scenar
     config.engineOptions
   );
 
-  const browser = await puppeteer.launch(puppeteerArgs);
+  const browser = await chromium.puppeteer.launch({
+    args: chromium.args,
+    defaultViewport: chromium.defaultViewport,
+    executablePath: await chromium.executablePath,
+    headless: chromium.headless
+  });
   const page = await browser.newPage();
 
   await page.setViewport({ width: VP_W, height: VP_H });
